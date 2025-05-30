@@ -1,0 +1,63 @@
+Episode 2 notes:
+
+Git is software to push code from local to online
+
+Github is a Remote Repository where code exists online
+
+NPM is not stands for node package manager
+
+NPM is javascript package manager which manages the packages based on the package.json file
+
+Json - Javascript Obect notation is file which starts with curly braces
+
+package.json is a configuration file which is used by the Npm
+
+package-lock.json
+
+To create the package.js file, use the below command: npm init or npm -y
+
+Npm manages all the packages installed in the system
+
+Bundlers are used to combine the html,css and js file to give one minimified fie
+
+Bundlers are : webpack, parcel, vite
+
+Parcel is bundle
+
+benefits of parcel:
+
+Hot module replacement
+
+Tree shaking
+
+dev build 
+
+production build
+
+compression
+
+minifinig
+
+cacheing
+
+broswer listing
+
+browser list- the package which tells the browsers to support in old brosers
+
+bundling
+
+
+^ - carret -> which improve the minor version
+
+~ - Tilde -> Which improve the major version
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+Episode 1 own notes:
+
+
+index file should be first
+
+inspect for google chrome for developers console
+
+emmet is a develoepr code toolkit 
+
+html:5
+
+CDN - content Delivery Network
+
+imported React and React DOM from CDN
+
+React - Core React
+
+React DOM - React Document Obect Model and It is bridge between React web app and Browser
+
+
+Basic react is tough, that's why JSX came into the picture
+
+React is only written in JSX
+
+
