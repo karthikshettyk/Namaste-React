@@ -1,0 +1,101 @@
+Building the react app
+
+Writing scripts in the package.json file
+
+"start:"parcel index.html"
+
+"build":"parcel build index.html"
+
+"test":"jest" 
+
+npm run start
+
+npm run build
+
+JSX - javascript syntax extension
+
+We can write react with JSX and Without JSX also
+
+JSX - is not html in JS
+
+JSX is html like syntax or XML like syntax
+
+Javascript engine understands ECMA script
+
+Current version is ES6
+
+React element -> Javascript object -> React Dom -> HTML element
+
+Babel is the transpiler which converts the JSX code into pure js code
+
+In JSX we give camelcase as attributes in the html element
+
+ex : className and tabIndex
+
+
+Mandatory extensions for vs code:
+
+ESlint
+
+Prettier
+
+Better Comments
+
+Bracket Pair Colourizor
+
+React is nothing but a javascript
+
+everything in react is a component
+
+Two types of componnets are :
+ 1)Class based componengt (Stateless Component) - old tradition - used javascript classes
+ 2)Functional based component (Statefull Component) - new tradition - used javascript functions 
+
+
+React functional component is a normal javascript function which retuens some JSX (Ultimately react element) and function name should be in capitial letters
+
+ex:
+  With return
+  const ReactComponnet = () => {
+                           return (<h1>hello</h1>);
+                               }
+
+  Without return:
+  const ReactComponent = () => <h1>hello</h1>;
+  
+
+ To render a react component, we should embed in the <ReactComponent><ReactComponent/>
+
+Component composition: Adding one componet into another component
+
+function also used to create component not only with the arrow functions
+
+Any Javascript and html can written inside the curly brases ({})
+
+JSX makes code more readable for the developers
+
+JSX will sanitize the javascript injections and will make our code safe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

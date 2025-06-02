@@ -52,6 +52,17 @@ bundling
 ~ - Tilde -> Which improve the major version
 
 
+npm - to install the packages in the application
+
+npx - to execute the packages in the application
+
+npm install react react-dom parcel
+
+npx parcel index.html - it will build dev and dist and cache folders
+
+npx parcel build index.html - it will build prod and dist and cache folders
+
+
 
 
 
