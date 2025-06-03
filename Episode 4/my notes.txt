@@ -1,0 +1,21 @@
+Episode 4:
+
+We are starting the namaste food delivery app like zomato and swiggy where we will use the swiggy api
+
+Before building the food delivery app, we should plan the website like Header, body and footer
+
+In header we have logo, sub links and cart 
+
+In body we have the serach bar and items display with the price like cards
+
+In footer we have the copyright or trademark about the company and its address, contact details
+
+Before building the app, there should be wireframe or mock screens.
+
+
+
+
+
+
+
+
