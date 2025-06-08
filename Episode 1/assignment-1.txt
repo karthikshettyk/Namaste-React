@@ -1,0 +1,49 @@
+1)What is emmet?
+Ans:Emmet is a toolkit which is used to shortcuts to write HTML and CSS into a boiler code.
+    ex:HTML:5
+
+2)Difference between library and framework?
+Ans:Library: Library is a pre written code by other developers to use in the our application and developer can call the function when ever is required in the application.
+    Ex: React, JQuery
+    Framework: Framework is basic structure of the application, It directs developers to write the code in the application.
+    Ex: Angular
+
+3)What is CDN and why we use it?
+Ans:CDN stands for content delivery network, It gives the URL of the hosted code in the somewhwere, We need to add the URLS in our application to use it.
+    ex: React and react dom CDN
+
+4)Why is React is known as React?
+Ans:React name called beacause with help of react library ,the developer can react to the changes in the data and states in the application and can also change the state and data according to the requirenment.
+
+5)What is cross origin in script tag?
+Ans:In script tag , we add the attribute as cross origin, because we are accessing the data or fetching from the different orgin site, It allow own website to access to different website.
+    ex: <script crossorigin></script>
+
+6)What is the difference between React and React dom?
+Ans:React is the core development code of react library ,It is should be imported from the react package
+    ex: import React from "React";
+    ReactDom is stands for the React document object model, Which converts react element (object) into the HTML element adds in the Real dom of the browser.
+
+7)What is the difference between react.develeopment.js files and react.production.js files via CDN?
+Ans:React.development.js files are used to write the code locally and debugging
+    ex:
+     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    React.production.js files are used to deploy the code live to the users
+    ex:
+     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+8)What is async and defer?
+Ans:In react, Async refers to the asynchrous operations that operations that's not block the main thread and handled in the background and allowing the app into the responsove.
+   In two positions they will use it in react
+   1)Fetching data asyc and await
+   2)In handling button events
+
+   Defer needs to learn from youtube
+   
+
+
+
+

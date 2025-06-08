@@ -1,0 +1,54 @@
+1)What is npm?
+Ans:NPM not stands for node package manager, but it manages all the node packages using the package.json file
+    to install any package use the NPM command
+
+2)What is parcel/webpack? Why do we need it?
+Ans:Parcel is a bundler, it is need it for the minifier and build the apps and also host the app in the local and also diagnosis the errors and also gives the live local server
+    Ex: Parcel, Web pack,Vite
+
+3)What is `.parcel-cache`?    
+Ans:.parcel cache is the folder where the cache of the app is stored, It optimize  the app performance. This folder is created when give the command 
+     parcel index.html
+
+4)What is npx?
+Ans:npx stands for node package executer, Which is used to execute the packages
+    npx index.html
+
+5) What is difference between `dependencies` vs `devDependencies`?
+Ans:The dependencies are nothing but node packages are used to get functionality in our application and these packages which go in the live to the users
+    but the dev dependcies are also packages used for only in development phase and it will not go in live phase
+
+6)What is tree shaking?
+Ans:Tree shaking process will start when we run the bundler such as parcel, It removes the unused code 
+    benefits:
+             reduce bundle size
+             removes the unused code
+             improve the performance
+
+7)What is Hot Module Replacement?
+Ans:Hot module Replacement is the feature used in the react development for replacing the upadted module without refreshing the entire page.
+    the bundlers will interact with react fast refresh
+
+8)List down your favourite 5 superpowers of Parcel and describe any 3 of them in your
+own words 
+Ans: 1)Minifizes the app
+     2)Tree shaking
+     3)BUild local and prod servers
+     4)Gives error 
+     5)Creates the caache
+     6)Improves the performance
+
+9)What is `.gitignore`? What should we add and not add into it?
+Ans:The .gitignore file we add in the application to ignore the files to be push from local to the remote repo
+    ex:.gitignore->/node_modules, /dist
+
+10) What is the difference between `package.json` and `package-lock.json`?
+Ans:Package.json is the config file where all the node_modules packages are added under the dev_dependencies and dependcies and it also gives the overall descdription of the project.
+    Package-lock.json has contains the exact version of the packages and also it dependecies packages versions also.
+
+11) Why should I not modify `package-lock.json`?
+Ans:It tracks the exact version of the package, if we chnage it, the application will crash it.
+
+
+
+

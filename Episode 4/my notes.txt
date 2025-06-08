@@ -12,6 +12,18 @@ In footer we have the copyright or trademark about the company and its address, 
 
 Before building the app, there should be wireframe or mock screens.
 
+Config Driven Ui usefull for frontend system engineering
+
+What is config driven ui - The UI driven by the config and its data and ultimately the data is the config
+
+The UI is controlled by the data
+
+
+
+
+
+
+
 
 
 

@@ -1,12 +1,14 @@
 {
   "name": "basic-react-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "The react app",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"parcel index.html",
+    "build":"parcel build index.html",
+    "test": "jest"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["Development"],
+  "author": "Karthik Shetty",
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.15.2"
