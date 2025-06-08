@@ -42,13 +42,32 @@ Ans: 1)Minifizes the app
 Ans:The .gitignore file we add in the application to ignore the files to be push from local to the remote repo
     ex:.gitignore->/node_modules, /dist
 
-10) What is the difference between `package.json` and `package-lock.json`?
+10)What is the difference between `package.json` and `package-lock.json`?
 Ans:Package.json is the config file where all the node_modules packages are added under the dev_dependencies and dependcies and it also gives the overall descdription of the project.
     Package-lock.json has contains the exact version of the packages and also it dependecies packages versions also.
 
-11) Why should I not modify `package-lock.json`?
+11)Why should I not modify `package-lock.json`?
 Ans:It tracks the exact version of the package, if we chnage it, the application will crash it.
 
+12)What is `node_modules` ? Is it a good idea to push that on git?
+Ans:node_modules is the folder created when ever we installed any package from NPM registory that installed package will get offline in our appliaction 
+     It is not a good idea to push on that git, It is very heavy folder, We can get the node_modules by giving the command as npm install
 
+13)What is the `dist` folder?
+Ans: The Dist folder is the distribution folder which is created when we hit the command as parcel index.html, this folder contains the minified index.html,index.css,index.js files which are deployed in the server.
 
+14)What is `browserlists`?
+Ans: The browserlists will write in the package json file where it describes how many browsers are mandatory to support our appliaction.
+ex: browserlists:["last 2 versions"]
+
+15)What are vite, webpack, parcel?
+Ans:These are the bundlers, which are used to bundle the our appliaction and also help to deploy in the production
+
+16)What is ^ - caret and ~ - tilda?
+Ans:Caret will update the minor version of the package in the node_modules
+    tilda will updates the major version of the package in the node_modules
+
+17)The Script types in html?
+Ans:The <script> tag is used to embed a client-side script (JavaScript).
+    <script src="index.js"></script>
 
