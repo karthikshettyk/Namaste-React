@@ -12,11 +12,19 @@ const Body = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.406498&lng=78.47724389999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const response = await fetch(
+          "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.406498&lng=78.47724389999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        );
         const data = await response.json();
-        console.log("the data",data?.data);
-        setResList(data?.data);
-        setFilteredResList(data?.data);
+        console.log("the data", data?.data);
+        setResList(
+          data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+            ?.restaurants
+        );
+        setFilteredResList(
+          data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+            ?.restaurants
+        );
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -35,7 +43,7 @@ const Body = () => {
         className="top-rated-res-btn"
         onClick={(e) => {
           let filtResListData = reslist.filter((resItem) => {
-            return resItem.rating > 4;
+            return resItem?.info?.avgRating > 4.3;
           });
           setFilteredResList(filtResListData);
         }}
@@ -50,7 +58,7 @@ const Body = () => {
         {filteredResList.map((resItem) => {
           return (
             <RestaturantCard
-              key={resItem.id}
+              key={resItem?.info?.id}
               resItem={resItem}
             ></RestaturantCard>
           );

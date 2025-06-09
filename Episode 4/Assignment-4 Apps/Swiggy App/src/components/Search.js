@@ -17,7 +17,7 @@ const Search = (props) => {
         className="search-btn"
         onClick={(e) => {
           let filterSearchedResList = props.resList.filter((resItem) => {
-            return resItem.name
+            return resItem?.info?.name
               .toLowerCase()
               .includes(searchValue.toLowerCase());
           });
