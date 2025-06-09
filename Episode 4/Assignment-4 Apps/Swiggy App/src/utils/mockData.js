@@ -10,7 +10,7 @@ let resData=[
         rating:"4.0"
     },
     {   id:3,
-        name:"Bangalore",
+        name:"Evva",
         desc:"A bakery",
         rating:"4.5"
     },

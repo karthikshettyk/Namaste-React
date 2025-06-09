@@ -3,8 +3,6 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 
-
-
 const root = document.getElementById("root");
 const reactRoot = ReactDOM.createRoot(root);
 

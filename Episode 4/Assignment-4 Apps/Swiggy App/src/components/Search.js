@@ -1,21 +1,31 @@
 import { useState } from "react";
 
-const Search = () => {
+const Search = (props) => {
   const [searchValue, setSearchedValue] = useState("");
-
 
   return (
     <div className="search-bar">
-      <input className="search-input"
+      <input
+        className="search-input"
         type="text"
         value={searchValue}
         onChange={(e) => {
           return setSearchedValue(e.target.value);
         }}
       ></input>
-      <button className="search-btn" onClick={(e)=>{
-            console.log("button clicked");        
-      }}>Search</button>
+      <button
+        className="search-btn"
+        onClick={(e) => {
+          let filterSearchedResList = props.resList.filter((resItem) => {
+            return resItem.name
+              .toLowerCase()
+              .includes(searchValue.toLowerCase());
+          });
+          props.setFilteredResList(filterSearchedResList);
+        }}
+      >
+        Search
+      </button>
     </div>
   );
 };

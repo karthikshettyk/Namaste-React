@@ -32,6 +32,8 @@ default export and default imports
 
 named exports (export keyword) and named imports {}
 
+root.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+
 
 
 
