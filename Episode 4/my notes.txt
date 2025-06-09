@@ -18,6 +18,24 @@ What is config driven ui - The UI driven by the config and its data and ultimate
 
 The UI is controlled by the data
 
+The Src folder should be added in the code
+
+In the src folder, we can add components folder for the components and utils folder for the utility, the constants file can add under the utils folder.
+
+Components should always add in the components folder
+
+Component name should be always capital
+
+We always need to export the Component before importing in other files
+
+default export and default imports
+
+named exports (export keyword) and named imports {}
+
+
+
+
+
 
 
 
