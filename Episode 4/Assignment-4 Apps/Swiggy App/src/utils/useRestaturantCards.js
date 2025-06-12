@@ -1,21 +1,20 @@
 import { useEffect } from "react";
 import { RESTATURANT_CARDS_URL } from "../utils/constants";
-import RestaturantCard from "../components/RestaturantCard";
-import Shimmer from "../components/Shimmer";
 
 
-const useRestaturantCards = (props) => {
+const useRestaturantCards = (reslist,filteredResList,setResList,setFilteredResList) => {
+
   //Useeffect function will called once the body renders.
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(RESTATURANT_CARDS_URL);
         const data = await response.json();
-        props.setResList(
+        setResList(
           data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
             ?.restaurants
         );
-        props.setFilteredResList(
+        setFilteredResList(
           data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
             ?.restaurants
         );
@@ -26,23 +25,6 @@ const useRestaturantCards = (props) => {
     fetchData();
   }, []);
 
-
-  if (reslist.length == 0) {
-    return <Shimmer></Shimmer>;
-  }
-
-  return (
-    <div className="res-container">
-      {props.filteredResList.map((resItem) => {
-        return (
-          <RestaturantCard
-            key={resItem?.info?.id}
-            resItem={resItem}
-          ></RestaturantCard>
-        );
-      })}
-    </div>
-  );
 };
 
 export default useRestaturantCards;

@@ -6,29 +6,21 @@ const RestaturantCard = (props) => {
   const { name, locality, cloudinaryImageId, avgRating } = props.resItem?.info;
 
   const resIdLists = [
-    {
-      547809:"Theobroma",
-      "KFC": 17104,
-      "Pizza Hut": 23707,
-      "McDonald's": 24613,
-      "Wow! Momo": 360967,
-      "Burger King": 32129,
-      "Chinese Wok": 986926,
-      "California Burrito": 108986,
-    },
+      547809,
+      17104,
+      23707,
+      24613,
+      360967,
+      32129,
+      986926,
+      108986,
   ];
 
-  let ressid;
-  ressid=resIdLists.filter((resName)=>{
-    name==resName
-    ;
-  })
-
-  console.log("res id",ressid[0])
+  const resId=Math.floor(Math.random() * resIdLists.length);
 
   return (
     <div>
-      <Link to={`/restaturantmenucard/${ressid[0]}`} className="res-card">
+      <Link to={`/restaturantmenucard/${resIdLists[resId]}`} className="res-card">
         <img
           src={SWIGGY_CLOUDINARY_URL + cloudinaryImageId}
           className="res-card-logo"

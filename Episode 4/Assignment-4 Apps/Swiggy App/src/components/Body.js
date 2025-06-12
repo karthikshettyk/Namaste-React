@@ -1,37 +1,20 @@
-import useRestaturantCards from "../utils/useRestaturantCards";
 import Search from "./Search";
-import { useState, useEffect } from "react";
-//import Shimmer from "./Shimmer";
-//import { RESTATURANT_CARDS_URL } from "../utils/constants";
+import { useState } from "react";
+import Shimmer from "./Shimmer";
 import TopRatedRestaturant from "./TopRatedRestaturant";
+import RestaturantCard from "./RestaturantCard";
+import useRestaturantCards from "../utils/useRestaturantCards";
 
 const Body = () => {
   const [reslist, setResList] = useState([]);
   const [filteredResList, setFilteredResList] = useState([]);
 
-  //Useeffect function will called once the body renders.
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch(RESTATURANT_CARDS_URL);
-  //       const data = await response.json();
-  //       setResList(
-  //         data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-  //           ?.restaurants
-  //       );
-  //       setFilteredResList(
-  //         data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-  //           ?.restaurants
-  //       );
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
+  useRestaturantCards(reslist, filteredResList, setResList, setFilteredResList);
 
   //Conditional Rendering
-  
+  if (reslist.length == 0) {
+    return <Shimmer></Shimmer>;
+  }
 
   return (
     <div className="body">
@@ -43,7 +26,16 @@ const Body = () => {
         resList={reslist}
         setFilteredResList={setFilteredResList}
       ></Search>
-     <useRestaturantCards reslist={reslist} setResList={setResList} filteredResList={filteredResList} setFilteredResList={setFilteredResList} ></useRestaturantCards>
+      <div className="res-container">
+        {filteredResList.map((resItem) => {
+          return (
+            <RestaturantCard
+              key={resItem?.info?.id}
+              resItem={resItem}
+            ></RestaturantCard>
+          );
+        })}
+      </div>
     </div>
   );
 };
