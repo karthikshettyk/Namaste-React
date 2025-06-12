@@ -4,3 +4,4 @@ export const SWIGGY_CARDS_URL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAA
 
 export const SWIGGY_CLOUDINARY_URL ="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
+export const MENU_ITEM_DISPLAY_URL="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/";

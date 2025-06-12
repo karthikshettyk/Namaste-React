@@ -1,0 +1,84 @@
+Episode-7:
+
+In useeffect hook, 
+
+First Condition without dependency array:
+
+useEffect((call back function)); - It renders every time componment renders.
+
+Second Condition with dependency array as empty:
+
+useEffect((call back fn),[]) - It renders on initial render (just once)
+
+Third Condition With depndency array with element:
+
+useEffect((call back fn),[]) - It renders initial render and also with dependency element changes.
+
+React router dom is the package is needs to be imported used for routing
+
+npm install react-router-dom
+
+To config the routes - createBrowserRouter from react-router-dom
+
+To provide the config to app component, we need to import Provider from react router dom
+
+<Provider config=config />
+
+const config = createBrowserRouter(
+                                   path:"/",
+                                   element:<App/>
+                                   error:"<Error/>
+                                   children:[
+                                       path:"/about",
+                                       element:<About/>
+                                            ]
+                                  );
+
+It provider should be given in the config root.render()
+
+To use the it as {LINK} from react-router-dom
+
+<Link to="/about">About </Link>
+
+Two types of routing:
+
+1)Client-Side Routing
+
+2)Server-Side Routing
+
+1)Client Side Routing:
+                      The client side routing does not calls the network to get the pages to render and the page doesnt refresh.
+                      ex:react-router-dom
+
+2)Server-Side Routing:
+                     While routing it calls the network get the UI and display that page to the UI.
+                     It is old style of rendering, The page will refreesh
+                     ex:JSX
+
+Single page application, In one page, all the routes are loaded does not take any refreshing of the page.
+
+Dynamic routing - /:id
+
+useparams hook from the react router dom to access the dynamic data
+
+
+
+
+
+
+
+
+
+
+                 
+
+
+
+
+
+
+
+
+
+
+

@@ -55,3 +55,8 @@
 .top-rated-res-btn{
   margin-left: 10px;
 }
+
+.res-menu-item-card{
+  display: flex;
+  flex-wrap: wrap;
+}
