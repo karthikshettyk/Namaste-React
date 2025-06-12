@@ -2,11 +2,33 @@ import { Link } from "react-router-dom";
 import { SWIGGY_CLOUDINARY_URL } from "../utils/constants";
 
 const RestaturantCard = (props) => {
+
   const { name, locality, cloudinaryImageId, avgRating } = props.resItem?.info;
+
+  const resIdLists = [
+    {
+      547809:"Theobroma",
+      "KFC": 17104,
+      "Pizza Hut": 23707,
+      "McDonald's": 24613,
+      "Wow! Momo": 360967,
+      "Burger King": 32129,
+      "Chinese Wok": 986926,
+      "California Burrito": 108986,
+    },
+  ];
+
+  let ressid;
+  ressid=resIdLists.filter((resName)=>{
+    name==resName
+    ;
+  })
+
+  console.log("res id",ressid[0])
 
   return (
     <div>
-      <Link to="/restaturantmenucard/547809" className="res-card">
+      <Link to={`/restaturantmenucard/${ressid[0]}`} className="res-card">
         <img
           src={SWIGGY_CLOUDINARY_URL + cloudinaryImageId}
           className="res-card-logo"
@@ -20,6 +42,3 @@ const RestaturantCard = (props) => {
 };
 
 export default RestaturantCard;
-
-
-
