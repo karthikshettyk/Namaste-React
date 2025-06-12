@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { MENU_ITEM_DISPLAY_URL } from "../utils/constants";
+import { useParams } from "react-router-dom";
 
-const RestaturantItemMenuCard = (props) => {
+
+const RestaturantItemMenuCard = () => {
   const [resMenuItemData, setResMenuItemData] = useState();
-
-  const resId = props.resId;
+  const {resId}= useParams();
 
   useEffect(() => {
     fetchData();
@@ -16,14 +17,16 @@ const RestaturantItemMenuCard = (props) => {
         { resId } +
         "&catalog_qa=undefined&submitAction=ENTER"
     );
-    const Json = resData.json();
+    const Json = await resData.json();
+    console.log("res menu data",Json);
     setResMenuItemData(
-      Json?.data?.cards[4].groupedCard.cardGroupMap.REGULAR.cards[2].card.card
+      Json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
     );
   };
   return (
     <div>
-      {resMenuItemData.map((resItem) => {
+      <div>restaurant Menu Card</div>
+      {/* {resMenuItemData.map((resItem) => {
         return (
           <div className="res-menu-item-card">
             <div>
@@ -38,7 +41,7 @@ const RestaturantItemMenuCard = (props) => {
             </div>
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 };
