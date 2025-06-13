@@ -1,9 +1,12 @@
 import { useEffect } from "react";
 import { RESTATURANT_CARDS_URL } from "../utils/constants";
 
-
-const useRestaturantCards = (reslist,filteredResList,setResList,setFilteredResList) => {
-
+const useRestaturantCards = (
+  reslist,
+  filteredResList,
+  setResList,
+  setFilteredResList
+) => {
   //Useeffect function will called once the body renders.
   useEffect(() => {
     const fetchData = async () => {
@@ -24,7 +27,6 @@ const useRestaturantCards = (reslist,filteredResList,setResList,setFilteredResLi
     };
     fetchData();
   }, []);
-
 };
 
 export default useRestaturantCards;

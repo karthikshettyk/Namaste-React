@@ -1,17 +1,18 @@
 import ReactDOM from "react-dom/client";
+import { lazy, Suspense } from "react";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import RestaturantItemMenuCard from "./components/RestaturantItemMenuCard";
 import Footer from "./components/Footer";
 import Cart from "./components/Cart";
 import About from "./components/AboutUs";
-import ContactUs from "./components/ContactUs";
+//import ContactUs from "./components/ContactUs";
+const ContactUs = lazy(() => import("./components/ContactUs"));
 import Login from "./components/Login";
 import Logout from "./components/Logout";
 import Error from "./components/Error";
 
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import Shimmer from "./components/Shimmer";
 
 const root = document.getElementById("root");
 const reactRoot = ReactDOM.createRoot(root);
@@ -49,7 +50,11 @@ const configRoutes = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: <ContactUs></ContactUs>,
+        element: (
+          <Suspense fallback={<div>Loading Page..</div>}>
+            <ContactUs></ContactUs>
+          </Suspense>
+        ),
       },
       {
         path: "/cart",
