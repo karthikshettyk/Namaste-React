@@ -1,0 +1,18 @@
+Setting up the test library:
+
+Installed React testing library,
+Installed Jest,
+Installed Babel dependicies,
+Configure Babel
+Configure Babel config file to disable the babel transilation
+Jest Configuration
+npm run test
+npx jest --init
+Install JSDOM library
+Install @babel/preset-react - to make JSX work for test cases
+And also include in the babel config file.
+Install testinglibrary/jest-dom
+
+
+
+
