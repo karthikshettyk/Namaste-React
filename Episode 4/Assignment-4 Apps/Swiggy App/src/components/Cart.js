@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { clearCart } from "../utils/cartSlice";
+import { clearCart, removeItem } from "../utils/cartSlice";
 import { MENU_ITEM_DISPLAY_URL } from "../utils/constants";
 
 const Cart = () => {
@@ -35,9 +35,17 @@ const Cart = () => {
               <div>Rs:{resItem?.card?.info?.price}/-</div>
               <br></br>
             </div>
+            <button
+              onClick={() => {
+                dispatch(removeItem());
+              }}
+            >
+              Remove Item
+            </button>
           </div>
         );
       })}
+
       <button
         onClick={() => {
           clearCartItems();
