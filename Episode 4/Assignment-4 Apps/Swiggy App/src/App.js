@@ -14,6 +14,8 @@ import Error from "./components/Error";
 
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import UserContext from "./utils/userContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 const root = document.getElementById("root");
 const reactRoot = ReactDOM.createRoot(root);
@@ -28,7 +30,7 @@ const App = () => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ userType: userName,setUserName }}>
+    <UserContext.Provider value={{ userType: userName, setUserName }}>
       <div className="app-layout">
         <Header></Header>
         <br></br>
@@ -79,4 +81,8 @@ const configRoutes = createBrowserRouter([
   },
 ]);
 
-reactRoot.render(<RouterProvider router={configRoutes}></RouterProvider>);
+reactRoot.render(
+  <Provider store={appStore}>
+    <RouterProvider router={configRoutes}></RouterProvider>
+  </Provider>
+);

@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
 import { MENU_ITEM_DISPLAY_URL } from "../utils/constants";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const RestaturantItemMenuCard = () => {
   const [resMenuItemData, setResMenuItemData] = useState();
   const { resId } = useParams();
+  //const [cartData, setCartData] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetchData();
@@ -21,9 +25,15 @@ const RestaturantItemMenuCard = () => {
         ?.card
     );
   };
+
+  const addToCart = (resItem) => {
+    dispatch(addItem(resItem));
+    //setCartData((prevItems) => [...prevItems, resItem]);
+  };
+
   return (
     <div>
-      <div>restaurant Menu Card</div>
+      <div>Menu Card</div>
       {resMenuItemData?.itemCards?.map((resItem) => {
         return (
           <div key={resItem?.card?.info?.id} className="res-menu-item-card">
@@ -40,6 +50,14 @@ const RestaturantItemMenuCard = () => {
               <div>{resItem?.card?.info?.description}</div>
               <br></br>
               <div>Rs:{resItem?.card?.info?.price}/-</div>
+              <br></br>
+              <button
+                onClick={() => {
+                  addToCart(resItem);
+                }}
+              >
+                Add to Cart
+              </button>
             </div>
           </div>
         );
