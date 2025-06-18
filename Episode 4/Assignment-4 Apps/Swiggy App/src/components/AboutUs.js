@@ -29,7 +29,7 @@ class AboutUs extends React.Component {
     console.log("It is called before unmounting the component");
   }
 
-  incrementCount = () => {
+  increamentCount = () => {
     this.setState((prevState) => ({
       count: prevState.count + 1,
     }));
@@ -47,7 +47,7 @@ class AboutUs extends React.Component {
         <div>About Us</div>
         <div>Karthik - Senior Developer</div>
         <div>The props are: </div>
-        <button onClick={this.incrementCount}>Increament</button>
+        <button onClick={this.increamentCount}>Increament</button>
         <div>{this.state.count}</div>
         <button onClick={this.decreamentCount}>Decreament</button>
       </div>

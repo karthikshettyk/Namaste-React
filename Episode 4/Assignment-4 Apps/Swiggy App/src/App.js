@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import RestaturantItemMenuCard from "./components/RestaturantItemMenuCard";
@@ -13,19 +13,30 @@ import Logout from "./components/Logout";
 import Error from "./components/Error";
 
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import UserContext from "./utils/userContext";
 
 const root = document.getElementById("root");
 const reactRoot = ReactDOM.createRoot(root);
 
 const App = () => {
+  const [userName, setUserName] = useState("Karthik");
+  useEffect(() => {
+    const data = {
+      name: "Shetty",
+    };
+    setUserName(data.name);
+  }, []);
+
   return (
-    <div className="app-layout">
-      <Header></Header>
-      <br></br>
-      <Outlet></Outlet>
-      <br></br>
-      <Footer></Footer>
-    </div>
+    <UserContext.Provider value={{ userType: userName,setUserName }}>
+      <div className="app-layout">
+        <Header></Header>
+        <br></br>
+        <Outlet></Outlet>
+        <br></br>
+        <Footer></Footer>
+      </div>
+    </UserContext.Provider>
   );
 };
 
