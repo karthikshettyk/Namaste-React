@@ -3,13 +3,13 @@ import { SWIGGY_CLOUDINARY_URL } from "../utils/constants";
 
 const RestaturantCard = (props) => {
 
+  console.log("the props data of the restatuarant card", props);
 
   const { name, locality, cloudinaryImageId, avgRating } = props.resItem?.info;
-
+  
   const resIdLists = [
     547809, 17104, 23707, 24613, 360967, 32129, 986926, 108986,
   ];
-
   const resId = Math.floor(Math.random() * resIdLists.length);
 
   return (
@@ -30,17 +30,15 @@ const RestaturantCard = (props) => {
   );
 };
 
-export const withPromotedLabel =(RestaturantCard)=>{
-  return (props)=>{
+export const withPromotedLabel = (RestaturantCard) => {
+  return (props) => {
     return (
       <div>
         <label>Promoted</label>
-        <RestaturantCard {...props}/>
+        <RestaturantCard {...props} />
       </div>
     );
-  }
-}
-
-
+  };
+};
 
 export default RestaturantCard;
