@@ -30,6 +30,7 @@ const App = () => {
   }, []);
 
   return (
+    <Provider store={appStore}>
     <UserContext.Provider value={{ userType: userName, setUserName }}>
       <div className="app-layout">
         <Header></Header>
@@ -39,6 +40,7 @@ const App = () => {
         <Footer></Footer>
       </div>
     </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -82,7 +84,5 @@ const configRoutes = createBrowserRouter([
 ]);
 
 reactRoot.render(
-  <Provider store={appStore}>
     <RouterProvider router={configRoutes}></RouterProvider>
-  </Provider>
 );

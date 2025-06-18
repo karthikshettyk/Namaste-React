@@ -7,7 +7,6 @@ import { addItem } from "../utils/cartSlice";
 const RestaturantItemMenuCard = () => {
   const [resMenuItemData, setResMenuItemData] = useState();
   const { resId } = useParams();
-  //const [cartData, setCartData] = useState([]);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -61,6 +60,9 @@ const RestaturantItemMenuCard = () => {
             </div>
           </div>
         );
+
+
+        
       })}
     </div>
   );

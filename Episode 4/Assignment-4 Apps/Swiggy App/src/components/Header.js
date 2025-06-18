@@ -4,10 +4,13 @@ import { Link } from "react-router-dom";
 import UserContext from "../utils/userContext";
 import { useContext } from "react";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [authVariableName, setAuthVariableName] = useState("Login");
   const { userType,setUserName } = useContext(UserContext);
+  const cartItemsLen= useSelector((store) => store.cart.items.length);
+
   return (
     <div className="header">
       <div className="logo-container">
@@ -37,7 +40,7 @@ const Header = () => {
             <li>Contact Us</li>
           </Link>
           <Link to={"/cart"}>
-            <li>Cart (0) Items</li>
+            <li>Cart ({cartItemsLen}) Items</li>
           </Link>
           <Link>
             {authVariableName == "Logout" ? <li>{userType}</li> : null}
