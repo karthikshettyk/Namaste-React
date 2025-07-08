@@ -1,25 +1,20 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import Header from "./Header";
 import { validate } from "../utils/validate";
 
 const Login = () => {
-
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
-  const nameRef = useRef(null);
-  const emailRef = useRef(null);
-  const passwordRef = useRef(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
   };
 
   const handleSubmit = () => {
-    const message = validate(
-      nameRef.current,
-      emailRef.current,
-      passwordRef.current,
-    );
+    const message = validate(name, email, password);
     setErrorMessage(message);
   };
 
@@ -45,8 +40,11 @@ const Login = () => {
             <input
               type="text"
               placeholder="Full Name"
-              ref={nameRef}
+              value={name}
               className="p-4 my-4 w-full bg-gray-700"
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
             ></input>
           ) : (
             <></>
@@ -54,14 +52,20 @@ const Login = () => {
           <input
             type="text"
             placeholder="Email"
-            ref={emailRef}
+            value={email}
             className="p-4 my-4 w-full bg-gray-700"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
           ></input>
           <input
             type="password"
             placeholder="Password"
-            ref={passwordRef}
+            value={password}
             className="p-4 my-4 w-full bg-gray-700"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
           ></input>
           <p className="text-red-500 font-bold text-lg py-2">{errorMessage}</p>
           <button
@@ -79,7 +83,6 @@ const Login = () => {
       </div>
     </div>
   );
-
 };
 
 export default Login;
